@@ -40,7 +40,7 @@ export const paymentForItems = async function(req:Request,res:Response):Promise<
 }
 
 /**
- * crea un session en stripe pararealizar pagos por subscripcion
+ * esta peticion crea un session en stripe pararealizar pagos por subscripcion
  * @param req 
  * @param res 
  * @returns {void}
