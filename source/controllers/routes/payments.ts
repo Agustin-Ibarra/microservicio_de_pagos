@@ -7,8 +7,8 @@ const stripe = new Stripe(`${process.env.PRIVATE_KEY}`);
 
 /**
  * esta peticion crea una sesion de stripe para poder concretar el pago de los productos
- * @param {object} req 
- * @param {object} res 
+ * @param req 
+ * @param res 
  * @returns {void}
  */
 export const paymentForItems = async function(req:Request,res:Response):Promise<void>{
@@ -37,4 +37,27 @@ export const paymentForItems = async function(req:Request,res:Response):Promise<
     cancel_url:req.body.cancel
   });
   res.send(session.url);
+}
+
+/**
+ * crea un session en stripe pararealizar pagos por subscripcion
+ * @param req 
+ * @param res 
+ * @returns {void}
+ */
+export const subscriptionPayments = async function(req:Request,res:Response):Promise<void>{
+  const idPrice = req.body.idPrice;
+  const success = req.body.success;
+  const cancel = req.body.cancel;
+  const sesion = await stripe.checkout.sessions.create({
+    mode:'subscription',
+    payment_method_types:['card'],
+    line_items:[{
+      price:idPrice,
+      quantity:1
+    }],
+    success_url:success,
+    cancel_url:cancel
+  });
+  res.send({url:sesion.url});
 }
