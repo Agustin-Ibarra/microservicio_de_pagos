@@ -3,9 +3,12 @@ El microservicio fue desarrollado con la finalidad de que las aplicaciones que u
 ## caracteristicas
 1. [Caracteristicas](#caracteristicas)
 2. [BackEnd](#backend)
+3. [Documentacion](#documentacion)
 ## Caracteristicas
 - Gestiona peticiones desde diferentes aplicacions para realizar pagos online
 - Integración con API de terceros, utiliza los servicios de stripe para realizar pagos online
 - implementacion de varibles de entorno para el acceso a diferentes ervicios y otros usos especificos
 ## BackEnd
 - Tecnologias: el servidor de este microservicio, esta desarrollado completamente en TypeScript en Node.js con el framework de express
+## Dcoumentacion
+- La docuemntacion del codigo del servidor como las rutas y meddlewares fue escrita con JSDoc
