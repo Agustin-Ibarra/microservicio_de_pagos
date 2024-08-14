@@ -10,5 +10,5 @@ El microservicio fue desarrollado con la finalidad de que las aplicaciones que u
 - implementacion de varibles de entorno para el acceso a diferentes ervicios y otros usos especificos
 ## BackEnd
 - Tecnologias: el servidor de este microservicio, esta desarrollado completamente en TypeScript en Node.js con el framework de express
-## Dcoumentacion
+## Documentacion
 - La docuemntacion del codigo del servidor como las rutas y meddlewares fue escrita con JSDoc
