@@ -1,6 +1,6 @@
 import express from 'express';
 import { Router } from 'express';
-import { paymentForItems, subscriptionPayments } from './routes/payments';
+import { paymentForItems, subscriptionPayments } from '../routes/payments';
 import { checkItems, checkSubscriptionItem } from '../middlewares/middlewares/middleware';
 
 const router = Router();
