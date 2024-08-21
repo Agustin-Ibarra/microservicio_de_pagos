@@ -21,6 +21,6 @@ backend/
 ├── source
   ├── controllers/       # Controladores de las rutas
   ├── routes/            # Definición de rutas
-  ├── middlewares/       # Middlewares (autenticación, validación, etc.)
+  ├── middlewares/       # Middlewares (validacion de las peticiones)
   ├── docs/              # Configuración de swagger y archivo con la documentacion de APIs
   └── index.ts           # Punto de entrada de la aplicación
