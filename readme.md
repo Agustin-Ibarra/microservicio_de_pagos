@@ -11,7 +11,7 @@ El microservicio fue desarrollado con la finalidad de que las aplicaciones que u
 ## BackEnd
 - Tecnologias: el servidor de este microservicio, esta desarrollado completamente en TypeScript en Node.js con el framework de express
 ## Documentacion
-- Codigo fuente: el codigo del servidor fue documentado con JSdocs
+- Codigo fuente: el codigo del servidor fue documentado con JSDocs
 - APIs: la documentacion de las APIs fure generada con swagger open.io enlace a la documentacion [docs](http://localhost:4242/microservice_payment/documentation)
 
 La estructura del backend está organizada de la siguiente manera:
