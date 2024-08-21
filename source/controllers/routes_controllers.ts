@@ -1,7 +1,7 @@
 import express from 'express';
 import { Router } from 'express';
-import { paymentForItems, subscriptionPayments } from '../routes/payments';
-import { checkItems, checkSubscriptionItem } from '../middlewares/middleware';
+import { paymentForItems, subscriptionPayments } from '../routes/payments.js';
+import { checkItems, checkSubscriptionItem } from '../middlewares/middleware.js';
 
 const router = Router();
 

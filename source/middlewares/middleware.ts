@@ -15,11 +15,11 @@ export const checkItems = function(req:Request,res:Response,next:NextFunction): 
     const arrayItems = req.body.items;
     let flag:boolean = true;
     if(Array.isArray(arrayItems)){
-      arrayItems.forEach(element => {
-        if(!element.item || typeof(element.item) !== 'string' || !element.itemInfo || typeof(element.itemInfo) !== 'string'){
+      arrayItems.forEach(data => {
+        if(!data.item || !data.itemInfo || !data.price || !data.amount){
           flag = false;
         }
-        else if(!element.price ||typeof(element.price) !== "number" || !element.amount || typeof(element.amount) !== "number"){
+        else if(typeof(data.price) !== "number" || typeof(data.amount) !== "number" || typeof(data.item) !== "string" || typeof(data.itemInfo) !== "string"){
           flag = false
         }
       });
