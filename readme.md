@@ -18,10 +18,9 @@ La estructura del backend está organizada de la siguiente manera:
 
 ```plaintext
 backend/
-│
-├── controllers/       # Controladores de las rutas
-├── routes/            # Definición de rutas
-├── middlewares/       # Middlewares (autenticación, validación, etc.)
-├── docs/              # Configuración de swagger y archivo con la documentacion de APIs
-├── index.ts           # Punto de entrada de la aplicación
-└── package.json       # Dependencias y scripts del backend
+├── source
+  ├── controllers/       # Controladores de las rutas
+  ├── routes/            # Definición de rutas
+  ├── middlewares/       # Middlewares (autenticación, validación, etc.)
+  ├── docs/              # Configuración de swagger y archivo con la documentacion de APIs
+  └── index.ts           # Punto de entrada de la aplicación
