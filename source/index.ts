@@ -1,9 +1,12 @@
 import express from 'express';
-import router from './controllers/routes_controllers.js';
 import swaggerUI from 'swagger-ui-express';
-import swaggerSetup from './docs/config.js'
+import dotenv from 'dotenv';
+import router from './controllers/routes_controllers.js';
+import swaggerSetup from './docs/config.js';
+
+dotenv.config();
 const app = express();
-const PORT:number = 4242
+const PORT = process.env.PORT;
 
 app.use(router);
 app.use('/microservice_payment/documentation',swaggerUI.serve,swaggerUI.setup(swaggerSetup));
