@@ -1,9 +1,10 @@
 version: '3.8'
-
-services:
-  my-service:
-    container_name: microservicio-de-pagos
+services:  
+  payments-service:
+    container_name: payments-service
     build: 
       context: .
     ports:
-      - "3000:3000"
+      - "${PORT}:${PORT}"
+    env_file:
+      - .env

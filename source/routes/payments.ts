@@ -36,7 +36,7 @@ export const paymentForItems = async function(req:Request,res:Response):Promise<
     success_url:req.body.success,
     cancel_url:req.body.cancel
   });
-  res.send(session.url);
+  res.json({url:session.url});
 }
 
 /**
@@ -59,5 +59,5 @@ export const subscriptionPayments = async function(req:Request,res:Response):Pro
     success_url:success,
     cancel_url:cancel
   });
-  res.send({url:sesion.url});
+  res.json({url:sesion.url});
 }
