@@ -7,21 +7,21 @@ El microservicio fue desarrollado con la finalidad de que las aplicaciones que u
 4. [Pruebas Unitarias](#pruebas-unitarias)
 5. [Contenedores Docker](#contenedores-docker)
 ## Caracteristicas
-- Gestiona peticiones desde diferentes aplicacions para realizar pagos online
+- Gestiona peticiones desde diferentes aplicaciones para realizar pagos online
 - Integración con API de terceros, utiliza los servicios de stripe para realizar pagos online
-- Uso de varibles de entorno para el acceso a diferentes ervicios y otros usos especificos
+- Uso de varibles de entorno para el acceso a diferentes servicios y otros usos especificos
 - Implementacion de contenedores Docker para ejcutar la aplicacion en entornos aislados
 ## BackEnd
-- Tecnologias: el servidor de este microservicio, esta desarrollado con TypeScript en Node.js con el framework de express
+- Tecnologias: el servidor de este microservicio, esta desarrollado con TypeScript en Node.js con el framework de Express
 - La estructura del backend está organizada de la siguiente manera:
 ```plaintext
 backend/
 ├── source
   ├── controllers/       # Controladores de las rutas
   ├── docs/              # Configuración de swagger y archivo con la documentacion de APIs
-  ├── middlewares/       # Middlewares (validacion de las peticiones)
+  ├── middlewares/       # Middlewares (procesamiento de los datos en las peticiones)
   ├── routes/            # Definición de rutas
-  ├── testing/           # archivos de preuebas unitarias
+  ├── testing/           # archivos de pruebas unitarias
   └── index.ts           # Punto de entrada de la aplicación
 ```
 ## Documentacion
@@ -29,13 +29,13 @@ backend/
 - APIs: la documentacion de las APIs fure generada con swagger open.io enlace a la documentacion [docs](http://localhost:4242/microservice_payment/documentation)
 ## Pruebas unitarias
 - Testing: las pruebas unitarias estan desrrolladas con la libreria Jest y Supertest
-- Iniciar Test: para iniciar los test se ejcuta el siguiente comando
+- Iniciar Test: para iniciar los test se ejecuta el siguiente comando
 ``` bash
 npm run test
 ```
 ## Contenedores Docker
 - La aplicacion utiliza contendores para facilitar el despliegue y ejecutar la aplicacion en entornos aislados
-- Para crear un contendor basado en una imagen del proyecto, tiene que estar en la raiz del mismo y ejecutar el siguiente comando
+- Para crear un contendor basado en la imagen del proyecto, tiene que estar en la raiz del mismo y ejecutar el siguiente comando
 ```
 docker-compose up payments-service --build
 ```
