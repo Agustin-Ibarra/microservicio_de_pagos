@@ -10,7 +10,9 @@ const PORT = process.env.PORT;
 
 app.use(router);
 app.use('/microservice_payment/documentation',swaggerUI.serve,swaggerUI.setup(swaggerSetup));
-app.listen(PORT,()=>{
-  console.clear();
+
+const server = app.listen(PORT,()=>{
   console.log('server run on port',PORT);
 });
+
+export {app,server};
