@@ -1,3 +1,4 @@
+import logger from "../monitoring/monitoring.js";
 import { NextFunction, Request, Response } from "express";
 
 /**
@@ -53,4 +54,41 @@ export const checkSubscriptionItem = function(req:Request,res:Response,next:Next
     }
     else{next()}
   }
+}
+
+export const requestLogger = function(req:Request,res:Response,next:NextFunction){
+  const start = Date.now();
+  res.on('finish',()=>{
+    if(res.statusCode >= 400 && res.statusCode < 500){
+      const responseTime = Date.now() - start
+      logger.error(`${req.method} ${req.originalUrl} - ${res.statusCode} - ${responseTime}ms - ${req.ip}`,{
+        method:req.method,
+        url:req.originalUrl,
+        status:res.statusCode,
+        responseTime:`${responseTime}ms`,
+        ip:req.ip
+      });
+    }
+    else if(res.statusCode >= 500){
+      const responseTime = Date.now() - start
+      logger.warn(`${req.method} ${req.originalUrl} - ${res.statusCode} - ${responseTime}ms - ${req.ip}`,{
+        method:req.method,
+        url:req.originalUrl,
+        status:res.statusCode,
+        responseTime:`${responseTime}ms`,
+        ip:req.ip
+      });
+    }
+    else{
+      const responseTime = Date.now() - start
+      logger.info(`${req.method} ${req.originalUrl} - ${res.statusCode} - ${responseTime}ms - ${req.ip}`,{
+        method:req.method,
+        url:req.originalUrl,
+        status:res.statusCode,
+        responseTime:`${responseTime}ms`,
+        ip:req.ip
+      });
+    }
+  });
+  next();
 }

@@ -1,0 +1,5 @@
+{"ip":"::ffff:127.0.0.1","level":"error","message":"POST /login - 401 - 18ms - ::ffff:127.0.0.1","method":"POST","responseTime":"18ms","status":401,"timestamp":"2024-10-22 21:23:12","url":"/login"}
+{"ip":"::ffff:127.0.0.1","level":"error","message":"POST /login - 401 - 1ms - ::ffff:127.0.0.1","method":"POST","responseTime":"1ms","status":401,"timestamp":"2024-10-22 21:23:22","url":"/login"}
+{"ip":"::ffff:127.0.0.1","level":"error","message":"POST /login - 401 - 1ms - ::ffff:127.0.0.1","method":"POST","responseTime":"1ms","status":401,"timestamp":"2024-10-22 21:23:22","url":"/login"}
+{"ip":"::ffff:127.0.0.1","level":"error","message":"POST /login - 401 - 1ms - ::ffff:127.0.0.1","method":"POST","responseTime":"1ms","status":401,"timestamp":"2024-10-22 21:23:23","url":"/login"}
+{"ip":"::ffff:127.0.0.1","level":"warn","message":"PATCH /login - 500 - 9ms - ::ffff:127.0.0.1","method":"PATCH","responseTime":"9ms","status":500,"timestamp":"2024-10-22 21:30:11","url":"/login"}

@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import Stripe from 'stripe';
 import dotenv from 'dotenv';
+import logger from "../monitoring/monitoring.js";
 
 dotenv.config();
 const stripe = new Stripe(`${process.env.PRIVATE_KEY}`);
@@ -12,6 +13,7 @@ const stripe = new Stripe(`${process.env.PRIVATE_KEY}`);
  * @returns {void}
  */
 export const paymentForItems = async function(req:Request,res:Response):Promise<void>{
+  logger.info(`${req.method}, ${req.url}, ${res.statusCode}, ${req.ip}`);
   const arrayItems: object[] = [];
   const itemsData = req.body.items;
   if(Array.isArray(itemsData)){
