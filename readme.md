@@ -5,7 +5,8 @@ El microservicio fue desarrollado con la finalidad de que las aplicaciones que u
 2. [BackEnd](#backend)
 3. [Documentacion](#documentacion)
 4. [Pruebas Unitarias](#pruebas-unitarias)
-5. [Contenedores Docker](#contenedores-docker)
+5. [Monitoreo](#monitoreo)
+6. [Contenedores Docker](#contenedores-docker)
 ## Caracteristicas
 - Gestiona peticiones desde diferentes aplicaciones para realizar pagos online
 - Integración con API de terceros, utiliza los servicios de stripe para realizar pagos online
@@ -20,6 +21,7 @@ backend/
   ├── controllers/       # Controladores de las rutas
   ├── docs/              # Configuración de swagger y archivo con la documentacion de APIs
   ├── middlewares/       # Middlewares (procesamiento de los datos en las peticiones)
+  ├── monitoring/        # Archivos de configuracion de winston y archivos logs
   ├── routes/            # Definición de rutas
   ├── testing/           # archivos de pruebas unitarias
   └── index.ts           # Punto de entrada de la aplicación
@@ -33,6 +35,8 @@ backend/
 ``` bash
 npm run test
 ```
+## Monitoreo
+- El monitoreo del microservicio se realiza con la libreria winston y node-mailer, se registran los errores en un archivo de logs y se envia por correro notificando los errores
 ## Contenedores Docker
 - La aplicacion utiliza contendores para facilitar el despliegue y ejecutar la aplicacion en entornos aislados
 - Para crear un contendor basado en la imagen del proyecto, tiene que estar en la raiz del mismo y ejecutar el siguiente comando
