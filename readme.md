@@ -18,7 +18,7 @@ El microservicio fue desarrollado con la finalidad de que las aplicaciones que u
 ```plaintext
 backend/
 ├── source
-  ├── controllers/       # Controladores de las rutas
+  ├── controllers/       # Controladores de las rutas y logica de las respuestas
   ├── docs/              # Configuración de swagger y archivo con la documentacion de APIs
   ├── middlewares/       # Middlewares (procesamiento de los datos en las peticiones)
   ├── monitoring/        # Archivos de configuracion de winston y archivos logs
