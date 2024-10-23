@@ -1,3 +1,4 @@
+import logger from "../monitoring/monitoring.js";
 import { NextFunction, Request, Response } from "express";
 
 /**
@@ -45,7 +46,7 @@ export const checkItems = function(req:Request,res:Response,next:NextFunction): 
  */
 export const checkSubscriptionItem = function(req:Request,res:Response,next:NextFunction):void{
   if(!req.body.idPrice || !req.body.success || !req.body.cancel){
-    res.status(400).send('Data incomplet!');
+    res.status(200).send('Data incomplet!');
   }
   else{
     if(typeof(req.body.idPrice) !== 'string' || typeof(req.body.success) !== 'string' || typeof(req.body.cancel) !== 'string'){
@@ -53,4 +54,44 @@ export const checkSubscriptionItem = function(req:Request,res:Response,next:Next
     }
     else{next()}
   }
+}
+
+export const requestLogger = function(req:Request,res:Response,next:NextFunction){
+  const start = Date.now();
+  res.on('finish',()=>{
+    if(res.statusCode >= 400 && res.statusCode < 500){
+      console.log(400);
+      const responseTime = Date.now() - start
+      logger.error(`${req.method} ${req.originalUrl} - ${res.statusCode} - ${responseTime}ms - ${req.ip}`,{
+        method:req.method,
+        url:req.originalUrl,
+        status:res.statusCode,
+        responseTime:`${responseTime}ms`,
+        ip:req.ip
+      });
+    }
+    else if(res.statusCode >= 500){
+      console.log(500);
+      const responseTime = Date.now() - start
+      logger.warn(`${req.method} ${req.originalUrl} - ${res.statusCode} - ${responseTime}ms - ${req.ip}`,{
+        method:req.method,
+        url:req.originalUrl,
+        status:res.statusCode,
+        responseTime:`${responseTime}ms`,
+        ip:req.ip
+      });
+    }
+    else{
+      const responseTime = Date.now() - start
+      console.log(200);
+      logger.info(`${req.method} ${req.originalUrl} - ${res.statusCode} - ${responseTime}ms - ${req.ip}`,{
+        method:req.method,
+        url:req.originalUrl,
+        status:res.statusCode,
+        responseTime:`${responseTime}ms`,
+        ip:req.ip
+      });
+    }
+  });
+  next();
 }
