@@ -3,3 +3,4 @@
 {"ip":"::ffff:127.0.0.1","level":"error","message":"POST /payment_items - 400 - 7ms - ::ffff:127.0.0.1","method":"POST","responseTime":"7ms","status":400,"timestamp":"2024-10-23 07:59:23","url":"/payment_items"}
 {"ip":"::ffff:127.0.0.1","level":"warn","message":"POST /payment_subscription - 500 - 3ms - ::ffff:127.0.0.1","method":"POST","responseTime":"3ms","status":500,"timestamp":"2024-10-23 07:59:27","url":"/payment_subscription"}
 {"ip":"::ffff:127.0.0.1","level":"warn","message":"POST /payment_subscription - 500 - 41ms - ::ffff:127.0.0.1","method":"POST","responseTime":"41ms","status":500,"timestamp":"2024-10-23 07:59:27","url":"/payment_subscription"}
+{"ip":"::ffff:127.0.0.1","level":"error","message":"POST /payment_items - 400 - 8ms - ::ffff:127.0.0.1","method":"POST","responseTime":"8ms","status":400,"timestamp":"2024-10-29 20:56:52","url":"/payment_items"}

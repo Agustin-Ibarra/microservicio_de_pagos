@@ -1,7 +1,7 @@
 import express from 'express';
 import swaggerUI from 'swagger-ui-express';
 import dotenv from 'dotenv';
-import router from './route/routes.js';
+import router from './routes/routes.js';
 import swaggerSetup from './docs/config.js';
 import { cronJob } from './monitoring/monitoring.js';
 
